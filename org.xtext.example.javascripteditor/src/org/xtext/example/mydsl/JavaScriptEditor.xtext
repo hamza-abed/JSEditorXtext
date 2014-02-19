@@ -1,0 +1,36 @@
+grammar org.xtext.example.mydsl.JavaScriptEditor with org.eclipse.xtext.common.Terminals
+
+generate javaScriptEditor "http://www.xtext.org/example/mydsl/JavaScriptEditor"
+
+Domainmodel:
+  
+ (elements += AbstractElement)* ; 
+ 
+AbstractElement:
+  FunctionDeclaration | Type | ProgramStart;
+  
+  
+  
+ 
+ ProgramStart:
+  '<script>'
+    (elements += AbstractElement)+
+   '</script>';
+ 
+  
+  
+  FunctionDeclaration:
+  'function' name = QualifiedName '(' (arguments=ID ':' type1=ID)? (',' argument+=ID ':' type2+=ID)* '){' 
+    (elements += AbstractElement)*
+    (instructiuons+=Instructions)*
+  '}';
+  
+  QualifiedName: ID;
+  
+  
+  Type:
+  	'var' name= ID ('=' element=ID)? ';'  ;
+  	 
+  Instructions : ID ';';
+  
+ 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.javascripteditor/src-gen" editDirectory="/org.xtext.example.javascripteditor.edit/src"
+    editorDirectory="/org.xtext.example.javascripteditor.editor/src" modelPluginID="org.xtext.example.javascripteditor"
+    forceOverwrite="true" modelName="JavaScriptEditor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.example.javascripteditor.edit"
+    editorPluginID="org.xtext.example.javascripteditor.editor" runtimeVersion="2.9">
+  <genPackages prefix="JavaScriptEditor" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
+      fileExtensions="jsdsl" ecorePackage="JavaScriptEditor.ecore#/">
+    <genClasses ecoreClass="JavaScriptEditor.ecore#//Domainmodel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaScriptEditor.ecore#//Domainmodel/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaScriptEditor.ecore#//AbstractElement"/>
+    <genClasses ecoreClass="JavaScriptEditor.ecore#//ProgramStart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaScriptEditor.ecore#//ProgramStart/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaScriptEditor.ecore#//FunctionDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//FunctionDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//FunctionDeclaration/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//FunctionDeclaration/argument"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JavaScriptEditor.ecore#//FunctionDeclaration/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//FunctionDeclaration/instructiuons"/>
+    </genClasses>
+    <genClasses ecoreClass="JavaScriptEditor.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//Type/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JavaScriptEditor.ecore#//Type/element"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
