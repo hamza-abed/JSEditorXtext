@@ -7,22 +7,17 @@ Domainmodel:
  (elements += AbstractElement)* ; 
  
 AbstractElement:
-  FunctionDeclaration | Type | ProgramStart;
+ FunctionDeclaration | Type  ;
+  
   
   
   
  
- ProgramStart:
-  '<script>'
-    (elements += AbstractElement)+
-   '</script>';
- 
-  
-  
+   
   FunctionDeclaration:
-  'function' name = QualifiedName '(' (arguments=ID ':' type1=ID)? (',' argument+=ID ':' type2+=ID)* '){' 
-    (elements += AbstractElement)*
-    (instructiuons+=Instructions)*
+  'function' name = QualifiedName '(' (arguments=ID )? (',' argument+=ID)* '){' 
+    ((elements += AbstractElement)* | (instructiuons+=Instructions)*)+
+    
   '}';
   
   QualifiedName: ID;
@@ -31,6 +26,16 @@ AbstractElement:
   Type:
   	'var' name= ID ('=' element=ID)? ';'  ;
   	 
-  Instructions : ID ';';
+  Instructions:
+  	(element +=instanciation | element2 +=addition | operation+=ID )+  ;
   
+ 
+ 
+ instanciation:
+ 'var'?	name=ID '=' variable=ID ';' ;
+  
+  addition:
+ 'var'?	name=ID '=' variable1=ID '+'  variable2=ID ';' ;
+ 
+
  
